@@ -1,0 +1,49 @@
+/* ==========================================================================
+   Dropdown
+   ========================================================================== */
+
+/* Trigger que ativa o Dropdown
+   ========================================================================== */
+%Dropdown-trigger {
+  &::after {
+    float: right;
+    display: inline-block;
+    content: "";
+  }
+}
+
+.Dropdown-up-trigger {
+  &::after {
+    @extend %Dropdown-trigger;
+    @include createTriangleUp(3px, 3px, 4px);
+    @include rem(margin, 10);
+    transition: transform .3s ease-in;
+  }
+
+  &.is-active::after,
+  &:hover::after {
+    border-bottom-color: $blue;
+  }
+
+  &.is-active::after {
+    transform: rotateX(180deg);
+  }
+}
+
+/* Dropdown-item
+   ========================================================================== */
+.Dropdown-item {
+  display: inline-block;
+  width: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Dropdown-list
+   ========================================================================== */
+.Dropdown-list {
+  height: 0;
+  opacity: 0;
+  transition: $defaultTransition;
+  overflow: hidden;
+}

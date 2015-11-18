@@ -1,0 +1,55 @@
+/* ==========================================================================
+   Icones
+   ========================================================================== */
+/**
+ * Modulo para os icones da aplicacao.
+ * Usar data:image/base64 nos icones.
+ */
+
+/* Icone de tendencia do Delta
+   ========================================================================== */
+%tendency-Icon {
+  @extend %u-imagereplacement;
+  position: relative;
+  left: 4px;
+  top: 2px;
+  display: inline-block;
+  height: 12px;
+  width: 5px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tendencyup-Icon {
+  @extend %tendency-Icon;
+  background-image: $tendencyUpIcon;
+}
+
+.tendencydown-Icon {
+  @extend %tendency-Icon;
+  background-image: $tendencyDownIcon;
+}
+
+/* Icone de tendencia do grafico da caixa
+   ========================================================================== */
+%tendencychart-Icon {
+  @extend %u-imagereplacement;
+  position: absolute;
+  right: -2px;
+  top: 14px;
+  display: inline-block;
+  height: 11px;
+  width: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tendencychartup-Icon {
+  @extend %tendencychart-Icon;
+  background-image: $tendencyChartUpIcon;
+}
+
+.tendencychartdown-Icon {
+  @extend %tendencychart-Icon;
+  background-image: $tendencyChartDownIcon;
+}

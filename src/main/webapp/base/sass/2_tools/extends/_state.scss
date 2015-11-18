@@ -1,0 +1,12 @@
+/* ==========================================================================
+   Classes de estado
+   ========================================================================== */
+.is-loading {
+  background-image: $loadingIcon;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  * {
+    opacity: 0;
+  }
+}

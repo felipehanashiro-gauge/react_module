@@ -1,0 +1,29 @@
+{
+  "name": "eSight-ui",
+  "description": "eSight para códigos de interface",
+  "main": "",
+  "authors": [
+    "Bryan Marvila <bryan.marvila@gauge.com.br>",
+    "Felipe Hanashiro <felipe.hanashiro@gauge.com.br>",
+    "Kaio Araujo <kaio.araujo@gauge.com.br>"
+  ],
+  "keywords": [
+    "front-end",
+    "esight-ui",
+    "user-interface",
+    "front",
+    "development"
+  ],
+  "moduleType": [],
+  "homepage": "localhost:3002/webapp/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "webshim": "~1.15.10"
+  }
+}

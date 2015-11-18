@@ -1,0 +1,123 @@
+/* ==========================================================================
+   Menu principal
+   ========================================================================== */
+/**
+ * Modulo do Menu principal da aplicacao.
+ *
+ * Possui dois estados, contraido e expandido. Atualizar atributo aria-expanded
+ * quando seu estado for atualizado, por questoes de acessibilidade.
+ * (http://www.w3.org/TR/wai-aria/roles#grid)
+ */
+
+/* .Menu
+   ========================================================================== */
+.Menu {
+  @include rem(width, $menuWidth);
+  @include willSlide;
+  position: fixed;
+  height: 100%;
+  color: $white;
+  background-color: $black;
+  z-index: 1;
+
+  & + .Content {
+    transform: translate3d(64px, 0, 0);
+    transform: translate3d(4rem, 0, 0);
+  }
+
+  &.is-open {
+    @include minWidthBreakpoint(1580px) {
+      transform: translate3d(-240px, 0, 0);
+      transform: translate3d(-15rem, 0, 0);
+    }
+
+    .Dropdown-trigger.is-active + .Dropdown-list {
+      height: 100%;
+      opacity: 1;
+    }
+  }
+
+  .Dropdown-item {
+    @include rem(padding-left, 50);
+    @include rem(line-height, 40);
+
+    &:hover {
+      background-color: $darkerGray;
+    }
+  }
+}
+
+/**
+ * Em resolucoes <= 1400px, o conteudo de main desliza a direita.
+ * Mais que isso, o menu desliza a esquerda.
+ *
+ * O valor de 1400px é resultado da soma entre o maior breakpoint e largura do
+ * menu.
+ */
+.Menu.is-open + .Content {
+  @include maxWidthBreakpoint(1579px) {
+    transform: translate3d(304px, 0, 0);
+    transform: translate3d(19rem, 0, 0);
+  }
+}
+
+/* .Menu-header
+   ========================================================================== */
+/**
+ * Modulo com as informacoes do usuario logado e botao para expandir/contrair
+ * menu.
+ */
+.Menu-header {
+  background-color: $darkBlue;
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  transition: $defaultTransition;
+
+  &:hover {
+    background-color: $blue;
+  }
+
+  &:active,
+  &.is-open, &:hover {
+    background-color: $lightBlue;
+  }
+
+  &.is-open {
+    background-image: $userIcon;
+
+    .Menu-toggle-button {
+      background-position: 162px center;
+    }
+  }
+
+  span {
+    @include word-overflow-with-ellipsis(100%);
+  }
+}
+
+/* .Menu-button
+   ========================================================================== */
+%Menu-button {
+  @include rem(font-size, 13);
+  position: relative;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.Menu-button {
+  @extend %Menu-button;
+  @include rem(padding-left, 50);
+  background-position: 10px center;
+
+  &.is-active,
+  &:hover {
+    color: $blue;
+  }
+}
+
+/**
+ * Botao para carregar o menu
+ */
+.Menu-toggle-button {
+  @extend %Menu-button;
+}

@@ -1,0 +1,46 @@
+{
+  "name": "eSight",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "browserify": "11.2.0",
+    "classnames": "^1.2.0",
+    "moment": "^2.10.6",
+    "react": "^0.14.0",
+    "react-addons-linked-state-mixin": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "react-highcharts": "^4.0.0",
+    "react-router": "^1.0.0-rc1",
+    "react-tools": "*",
+    "reactify": "^1.1.1",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {
+    "babel-plugin-react-transform": "1.1.1",
+    "babelify": "^6.3.0",
+    "browserify": "^11.2.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^0.0.6",
+    "gulp-inject": "^3.0.0",
+    "gulp-live-server": "0.0.29",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^2.0.4",
+    "gulp-shell": "^0.5.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-streamify": "^1.0.2",
+    "gulp-uglify": "^1.5.1",
+    "gulp-util": "^3.0.6",
+    "livereactload": "^2.0.1",
+    "react-proxy": "1.1.0",
+    "require-dir": "^0.1",
+    "underscore": "^1.8.3",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "vinyl-transform": "^1.0.0",
+    "watchify": "^3.4.0",
+    "yargs": "^3.27.0"
+  }
+}

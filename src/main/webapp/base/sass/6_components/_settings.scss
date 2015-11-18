@@ -1,0 +1,83 @@
+/* ==========================================================================
+   Componente para Settings
+   ========================================================================== */
+.Settings {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.Settings-trigger {
+  @extend %u-imagereplacement;
+  @include rem(padding, 20);
+  @include rem(height, 14);
+  @include rem(width, 3);
+  float: right;
+  background: $settingsTriggerIcon no-repeat center;
+}
+
+.Settings-form {
+  @include rem(width, 299);
+  @include rem(right, 12);
+  @include rem(top, 4);
+  position: absolute;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
+  z-index: 2;
+  background-color: #FFF;
+}
+
+.Settings-type-user {
+  @include rem(width, 299);
+  @include rem(right, 12);
+  @include rem(top, 50);
+  position: absolute;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
+  z-index: 2;
+  background-color: #FFF;
+}
+
+%Settings-fieldset {
+  border: 0;
+  margin: 0;
+}
+
+.Settings-fieldset {
+  @extend %Settings-fieldset;
+  @include rem(padding-top, 10);
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+
+  &:last-child {
+    @include rem(padding-bottom, 10);
+  }
+}
+
+.Settings-action-fieldset {
+  @extend %Settings-fieldset;
+  @include rem(padding, 14, 20);
+  border-top: 1px solid $lighterGray;
+}
+
+.Settings-fieldset-chart{
+  @extend %Settings-fieldset;
+   margin: 15px;
+}
+
+.Settings-fieldset-chart-container {
+  @extend %Settings-fieldset;
+  float: left;
+  margin-left: 40px;
+  margin-top: 10px;
+}
+
+.Settings-fieldset-chart-fleet{
+  @extend %Settings-fieldset;
+  float: left;
+  margin: 0.5px;
+}
+
+.Settings-fieldset-chart-container-fleet{
+  @extend %Settings-fieldset;
+  margin-left: 27px;
+}

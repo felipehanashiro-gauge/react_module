@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Logos
+   ========================================================================== */
+/**
+ * Modulo com os logos do sistema
+ */
+
+.Logo,
+%Logo {
+  @extend %u-imagereplacement;
+  display: inline-block;
+  background-repeat: no-repeat;
+}
+
+.flyembraer-Logo {
+  @extend %Logo;
+  height: 25px;
+  width: 127px;
+  background-image: $flyEmbraerIcon;
+}
+
+.esight-Logo {
+  @extend %Logo;
+  float: left;
+  width: 60px;
+  background-image: $esightIcon;
+  background-position: center;
+}

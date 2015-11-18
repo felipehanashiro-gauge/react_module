@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Componente para Livesearch
+   ========================================================================== */
+
+.Livesearch {
+  @include rem(font-size, 13);
+  @include rem(line-height, 19);
+  @include rem(padding, 5.5, 0);
+  border-bottom: 1px solid $white;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  width: 100%;
+  appearance: none;
+  color: $black;
+}
+
+::-webkit-input-placeholder {
+  color: $lightGray;
+}
+
+:-moz-placeholder {
+  color: $lightGray;
+}
+
+::-moz-placeholder {
+  color: $lightGray;
+}
+
+:-ms-input-placeholder {
+  color: $lightGray;
+}

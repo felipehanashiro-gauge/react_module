@@ -1,0 +1,26 @@
+/* ==========================================================================
+   Componente
+   ========================================================================== */
+/**
+ * Modulo para configurar os estilos de exibicao do Kit.
+ */
+
+.Component {
+  @include rem(font-size, 13);
+  @include rem(line-height, 21);
+}
+
+/* Descricao do componente
+   ========================================================================== */
+.Component-body {
+  @include rem(padding, 20);
+}
+
+/* Titulo do componente
+   ========================================================================== */
+
+/* Highlight da documentacao (destaca texto)
+   ========================================================================== */
+.Component-highlight {
+  color: red;
+}

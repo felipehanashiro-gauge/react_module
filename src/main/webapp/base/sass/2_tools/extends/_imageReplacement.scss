@@ -1,0 +1,13 @@
+/* ==========================================================================
+   Image replacement
+   ========================================================================== */
+/**
+ * Troca texto por imagem
+ * Fonte: https://css-tricks.com/examples/ImageReplacement/#h5bp2
+ */
+.u-imagereplacement,
+%u-imagereplacement {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}

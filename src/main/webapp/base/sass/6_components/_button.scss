@@ -1,0 +1,91 @@
+/* ==========================================================================
+   Botoes
+   ========================================================================== */
+
+/* Botao com formato de link
+   ========================================================================== */
+/**
+ * Botao com aspecto de link. Nao usar links para carregar acoes que não sejam
+ * de carregamento de novo conteudo (usar link para expandir um dropbox, por
+ * exemplo).
+ */
+.link-Button {
+  border: 0;
+  margin: 0;
+  background-color: transparent;
+}
+
+#menu-header:not(.is-open) .logout-button{
+  display: none;
+}
+
+.logout-button{
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+/* Botoes do menu principal
+   ========================================================================== */
+.menu-Button {
+  @include createMenuButton($menuIcon);
+  background-position: 11px center;
+  padding-left: 50px;
+  &:hover, &.is-active{
+    background-color: transparent;
+  }
+}
+
+.home-Button {
+  @include createMenuButton($homeIcon);
+}
+
+.dataexchange-Button, .exchange-Button {
+  @include createMenuButton($dataExchangeIcon);
+}
+
+.dashboards-Button {
+  @include createMenuButton($dashboardsIcon);
+}
+
+.reliability-Button{
+  @include createMenuButton($reliabilityIcon);
+}
+
+.maintenance-Button{
+  @include createMenuButton($setupIcon);
+}
+
+.setup-Button {
+  @include createMenuButton($setupIcon);
+}
+
+.administrator-Button {
+  @include createMenuButton($administratorIcon);
+}
+
+/* Botao de call to action como link
+   ========================================================================== */
+.linkaction-Button {
+  @extend .link-Button;
+  @include rem(font-size, 13);
+  @include rem(line-height, 21);
+  padding: 0;
+  color: $darkBlue;
+  font-weight: bold;
+  transition: $defaultTransition;
+
+  &:hover {
+    background-color: $darkerGray;
+  }
+
+  &:active {
+    color: $lightBlue;
+  }
+
+  &.is-disabled {
+    color: $lightGray;
+  }
+}

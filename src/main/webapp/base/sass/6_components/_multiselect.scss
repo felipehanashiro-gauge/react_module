@@ -1,0 +1,18 @@
+/* ==========================================================================
+   Multiselect
+   ========================================================================== */
+.Multiselect {
+  @include rem(padding, 7, 15, 0);
+}
+
+.Multiselect-list {
+  @include rem(max-height, 117);
+  @include rem(margin, 10, 0);
+  padding: 0;
+  list-style: none;
+  overflow-y: auto;
+}
+
+.Multiselect-option {
+  @include rem(padding, 9, 0);
+}

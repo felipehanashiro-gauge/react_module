@@ -1,0 +1,56 @@
+.Chart {
+	@include rem(padding-top, 20);
+	@include rem(height, 420);
+}
+
+.ChartBig {
+	@include rem(padding-top, 20);
+	@include rem(height, 650);
+}
+
+.ChangeFilter {
+	@include rem(font-size, 12);
+    background-color: #005194;
+    color: #FFFFFF;
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+     margin: 0 20px 0 100px;
+    text-transform: uppercase;
+    &:hover {
+        background-color:#4089CE;
+        cursor:pointer;
+    }
+}
+
+.ChangeFilter.is-active {
+  background-color:#4089CE;
+}
+
+.ChartFilter{
+	@include rem(margin-top, -50);
+    margin-left: 2px;
+}
+
+.Chart-wrapper {
+	position: relative;
+  @extend %bottom-Panel;
+  @include rem(padding-bottom, 20);
+}
+
+.highcharts-container {
+	overflow: visible !important;
+
+ 	svg {
+		overflow: visible !important;
+	}
+}
+
+.Issues-chart,
+.Issues-table {
+	float: left;
+}
+
+.Issues-chart {
+	width: 67%;
+}

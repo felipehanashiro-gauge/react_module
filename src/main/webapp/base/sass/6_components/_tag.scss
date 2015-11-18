@@ -1,0 +1,151 @@
+/* ==========================================================================
+   Tags
+   ========================================================================== */
+/**
+ * Modulo para tags do sistema.
+ * Um exemplo de uso é a lista de tags selecionada pelo usuario. As que tiverem
+ * "x" são do tipo 'dynamic' e as que não tiverem serão do tipo 'static';
+ */
+@mixin createTagBorder($color) {
+  border-top: 13px solid transparent;
+  border-right: 8px solid $color;
+  border-bottom: 12px solid transparent;
+}
+
+.Tag-area {
+  @extend %Panel-area;
+  @include rem(padding-right, 0);
+  position: relative;
+  transition: height .2s ease-in;
+}
+
+.Tag-list {
+  @include rem(height, 39);
+  @include rem(padding, 7, 130, 0, 21);
+  margin: 0;
+  overflow: hidden;
+  list-style: none;
+
+  &.is-visible {
+    height: 100%;
+    overflow: auto;
+    min-height: 39px;
+  }
+}
+
+%Tag {
+  @include rem(margin-bottom, 7);
+  @include rem(padding-bottom, 5);
+  @include rem(padding-top, 5);
+  @include rem(font-size, 10);
+  @include rem(line-height, 15);
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  vertical-align: middle;
+
+  &:not(:last-child) {
+    @include rem(margin-right, 15);
+  }
+
+  &::before {
+    @include rem(left, -8);
+    position: absolute;
+    top: 0;
+    content: "";
+    display: inline-block;
+	  height: 0;
+    width: 0;
+  }
+}
+
+.static-Tag {
+  @extend %Tag;
+  @include rem(padding-left, 16);
+  @include rem(padding-right, 10);
+  background-color: $blue;
+  color: #FFF;
+
+  &::before {
+    @include createTagBorder($blue);
+  }
+}
+
+.dynamic-Tag {
+  @extend %Tag;
+  @include rem(padding-left, 26);
+  @include rem(padding-right, 20);
+  background-color: $lightBlue;
+  color: $darkBlue;
+
+  &::before {
+    @include createTagBorder($lightBlue);
+  }
+}
+
+.Tag-hole {
+  @include rem(height, 5);
+  @include rem(width, 5);
+  @include rem(left, 10);
+  @include rem(top, 10);
+  position: absolute;
+  left: 0;
+  border-radius: 50%;
+  background-color: #FFF;
+}
+
+.Tag-remove {
+  @extend .link-Button;
+  @include rem(height, 8);
+  @include rem(width, 8);
+  @include rem(right, 6);
+  @include rem(top, 8);
+  position: absolute;
+  padding: 0;
+  font-weight: normal;
+  outline: 0;
+  background: $closeIcon no-repeat center;
+}
+
+.Tag-value {
+  @include word-overflow-with-ellipsis(95px);
+}
+
+%Tag-icon {
+  @extend %u-imagereplacement;
+  @include rem(left, 11);
+  @include rem(height, 13);
+  @include rem(width, 13);
+  position: absolute;
+  display: inline-block;
+  background-repeat: no-repeat;
+}
+
+.Tag-operator-icon {
+  @extend %Tag-icon;
+
+  background-image: $tagOperatorIcon;
+}
+
+.Tag-region-icon {
+  @extend %Tag-icon;
+  background-image: $tagRegionIcon;
+}
+
+.Tag-expand {
+  @include rem(padding-left, 5);
+  @include rem(padding-right, 45);
+  @include rem(padding-top, 13);
+  @include rem(font-size, 10);
+  @include rem(line-height, 15);
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: $lightGray;
+  text-transform: uppercase;
+  transition: opacity .2s ease-in;
+
+  &:hover {
+    opacity: 0;
+  }
+}

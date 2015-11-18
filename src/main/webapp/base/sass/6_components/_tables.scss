@@ -1,0 +1,245 @@
+/* ==========================================================================
+    Table Module
+   ========================================================================== */
+
+/**
+ * This is the module that contains the default styles for tables on eSight
+ * based on BEM Methodology.
+ *
+ * Example HTML:
+ *
+ *  <table class="table">
+ *       <tr class="table__row">
+ *          <td class="table__column">
+ *          </td>
+ *       </tr>
+ *  </table>
+ *
+ */
+
+/* Resets + Default Styles
+ ========================================================================== */
+
+.table,
+.table__row {
+  /* Box Model */
+  margin: 0;
+  padding: 0;
+}
+
+.table {
+  /* Positioning */
+  position: relative;
+
+  /* Box Model */
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+
+  /* Other */
+  font: 13px sans-serif !important;
+  &.table__dynamic{
+    table-layout: auto;
+  }
+}
+
+.table__container__no_margin{
+  margin-right: -2px;
+}
+
+/* table body + table head + table foot
+ ========================================================================== */
+
+.table__head,
+.table__body,
+.table__footer {
+  /* Other */
+  color: inherit;
+}
+
+/* rows
+ ========================================================================== */
+
+.table__row {
+}
+
+.table__row_item_subhead {
+  /* Other */
+  text-transform: uppercase;
+}
+
+/* columns
+ ========================================================================== */
+
+.table__column {
+  /* Box Model */
+  border: 1px #d5d5d5 solid;
+  overflow: hidden;
+  padding: 8px 0;
+  height: 32px;
+
+  /* Other */
+  font-weight: 400;
+  text-align: center;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+
+  &.column__2{
+    height: 66px;
+  }
+
+  &.no_border{
+    border: 0;
+  }
+}
+
+/* column modifiers
+ ========================================================================== */
+
+.table__column_item_head,
+.table__column_item_subhead {
+  /* Other */
+  font-weight: bold !important;
+  text-shadow: 1px 1px #FFF;
+}
+
+.table__column_item_head,
+.table__column_item_subhead {
+  /* Other */
+  color: #505c65;
+}
+
+.table__column_item_head {
+  /* Other */
+  background-color: #e6e6e6;
+  text-transform: uppercase;
+}
+
+.table__column_item_subhead {
+  /* Other */
+  background-color: #ebebeb;
+  height: 34px;
+}
+
+.table__title,
+.table__column_body_head,
+.table__body_item_subhead,
+.table__footer_item_subhead {
+  /* Box Model */
+  padding-left: 15px;
+  padding-right: 15px;
+
+  /* Other */
+  text-align: left;
+}
+
+.table__title,
+.table__column_body_head {
+  /* Other */
+  font-size: 15px;
+}
+
+
+.table__body_item_subhead {
+  vertical-align: middle;
+}
+
+/* buttons
+ ========================================================================== */
+
+.table__button {
+  /* Box Model */
+  overflow: hidden;
+
+  /* Other */
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+.table__button_action_open {
+  /* Positioning */
+  float: right;
+
+  /* Box Model */
+  height: 16px;
+  width: 16px;
+
+  /* Other */
+  background: url(../../img/icon-settings.png) no-repeat -20px 0;
+}
+
+.table__button:hover,
+.table__button_action_open_status_active {
+  /* Other */
+  background-position: 0 0;
+}
+
+.table__button_action_expand {
+  /* Positioning */
+  float: left;
+
+  /* Box Model */
+  height: 21px;
+  margin-right: 5px;
+  margin-top: -5px;
+  width: 21px;
+
+  /* Other */
+  background: url(../../img/toggleUnsch.png) no-repeat 0 0;
+}
+
+.table__button_action_expand_status_active {
+  /* Other */
+  background-position: 0 31px;
+}
+
+
+/* Info
+ ========================================================================== */
+.table__info {
+  /* Position */
+  position: relative;
+  top: -15px;
+
+  /* Other */
+  font-size: 13px;
+}
+
+
+/* links
+ ========================================================================== */
+
+.table__link {
+  color: #1458aa;
+}
+
+
+
+/* Table types
+ ========================================================================== */
+.table_type_violation {
+  /* Other */
+  color: #838383;
+  text-align: left;
+}
+
+.table_type_violation__column {
+  /* Display & box model */
+  border-bottom: 1px solid #dfdfdf;
+  padding: 15px;
+}
+
+
+/* shame
+ ========================================================================== */
+.border__highlighted_position_left {
+  border-left-width: 3px;
+}
+
+.border__highlighted_position_bottom {
+  border-bottom-width: 3px;
+}
+
+.border__highlighted_position_top {
+  border-top-width: 3px;
+}

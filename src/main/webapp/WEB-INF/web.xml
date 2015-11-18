@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         metadata-complete="true" version="3.0">
+    <display-name>eSight</display-name>
+
+    <servlet>
+        <!-- Override init parameter to avoid nasty -->
+        <!-- file locking issue on windows.         -->
+        <servlet-name>default</servlet-name>
+        <init-param>
+            <param-name>useFileMappedBuffer</param-name>
+            <param-value>false</param-value>
+        </init-param>
+    </servlet>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name >precluded methods</web-resource-name>
+            <url-pattern >/base/sass/*</url-pattern>
+            <url-pattern >/base/react_components/*</url-pattern>
+            <url-pattern >/base/javascripts/modules/*</url-pattern>
+
+            <url-pattern >/cpms/sass/*</url-pattern>
+            <url-pattern >/cpms/react_components/*</url-pattern>
+            <url-pattern >/cpms/javascripts/modules/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint/>
+    </security-constraint>
+
+
+
+    <!--filter>
+        <filter-name>frontprod</filter-name>
+        <filter-class>com.msg3.model.filter.StaticFolderFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>frontprod</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <session-config>
+        <session-timeout>240</session-timeout>
+    </session-config-->
+
+
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+</web-app>

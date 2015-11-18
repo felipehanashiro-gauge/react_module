@@ -1,0 +1,26 @@
+/* ==========================================================================
+   Checkbox
+   ========================================================================== */
+.Checkbox {
+  display: none;
+}
+
+/**
+ * Estilizacao de checkbox usando atributo :checked
+ */
+.Checkbox + .checkbox-Label::before {
+  @include rem(height, 19);
+  @include rem(width, 19);
+  @include rem(margin-right, 9);
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid $lighterGray;
+  border-radius: 50%;
+  background-color: #FFF;
+}
+
+.Checkbox:checked + .checkbox-Label::before {
+  border: 0;
+  background-color: $darkBlue;
+}

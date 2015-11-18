@@ -1,0 +1,99 @@
+/* ==========================================================================
+   Modulo de abas
+   ========================================================================== */
+
+.Tabs {
+  @include rem(line-height, 22);
+  display: flex;
+}
+
+.benchmark-Tabs{
+	width: 87%;
+	float: left;
+}
+
+.chartBenchmark-Tabs{
+	width: 10%;
+}
+
+.benchmark-Tabs a,
+.issues-Tabs a {
+  height: 2.5em;
+  margin-top: 0.6em;
+}
+
+.issues-Tabs {
+  width: 85%;
+  float: left;
+}
+
+.panel-Tabs,
+.chart-Tabs {
+  @extend %Panel-area;
+
+  .Tabs-item {
+    max-width: 220px;
+    @include rem(padding, 9, 0);
+  }
+}
+
+.chart-Tabs {
+  .Tabs-item {
+    @extend %u-imagereplacement;
+    @include rem(margin, 0, 7.5);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.Tabs-bar-item {
+  background-image: $columnChart;
+
+  &.is-active {
+    background-image: $columnChartActive;
+  }
+}
+
+.Tabs-line-item {
+  background-image: $lineChart;
+
+  &.is-active {
+    background-image: $lineChartActive;
+  }
+}
+
+.Tabs-pie-item {
+  background-image: $pieChart;
+
+  &.is-active {
+    background-image: $pieChartActive;
+  }
+}
+
+.Tabs-table-item {
+  background-image: $tableIcon;
+
+  &.is-active {
+    background-image: $tableIconActive;
+  }
+}
+
+.Tabs-item {
+  flex: 1;
+  color: $blue;
+  cursor: pointer;
+  box-shadow: 0 1px $lighterGray;
+  transition: $defaultTransition;
+
+  &.is-active,
+  &:hover {
+    box-shadow: 0 2px $darkBlue;
+    color: $darkBlue;
+  }
+
+  a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+}

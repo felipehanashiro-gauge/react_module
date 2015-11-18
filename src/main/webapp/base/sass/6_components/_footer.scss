@@ -1,0 +1,50 @@
+/* ==========================================================================
+   Footer principal
+   ========================================================================== */
+
+.emb-footer{
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+
+  background-color: $lighterGray;
+  font-size: 10px;
+
+
+  .emb-footer-brand{
+    display: inline-block;
+
+    width: 285px;
+    height: 100%;
+
+    background-color: $darkBlue;
+  }
+  .emb-slogan{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    border-right: 1px solid $lightBlue;
+    padding-right: 15px;
+    padding-left: 20px;
+
+    color: $white;
+  }
+
+  .emb-logo{
+    position: absolute;
+    top: 50%;
+    left: 140px;
+    transform: translateY(-50%);
+  }
+
+  .emb-copy{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+}

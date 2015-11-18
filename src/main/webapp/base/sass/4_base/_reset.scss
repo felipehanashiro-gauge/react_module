@@ -1,0 +1,48 @@
+html {
+  /**
+   * Reset de font-size para utilizar a unidade rem
+   */
+  font-size: 62.5%;
+}
+
+body {
+  /*@include rem(max-width, $largeWidth);*/
+  max-width : 1005px;
+  @include rem(font-size, 13);
+  @include rem(line-height, 21);
+  flex-direction: column;
+  box-shadow: 20px 0 40px -20px rgba(51, 51, 51, 0.15);
+  margin: 0 auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding: 0 0 0 3px;
+  width: 100%;
+  background-color: #E1E1E1;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+
+  & > * {
+    flex: 1;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style-type: none;
+  }
+}
+
+.Content {
+  @include willSlide;
+  flex: 1;
+  z-index: 2;
+  background-color: #FFF;
+  padding-bottom: 40px;
+}

@@ -1,0 +1,10 @@
+/**
+ * Calcula a medida na unidade "em"
+ *
+ * A função recebe o target (medida desejada) e o context
+ * (a medida do container).
+ *
+ */
+@function em($target, $context: 10) {
+  @return ($target / $context) * 1em;
+}

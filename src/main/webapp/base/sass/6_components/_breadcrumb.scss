@@ -1,0 +1,39 @@
+/* ==========================================================================
+   Breadcrumb
+   ========================================================================== */
+.Breadcrumb {
+  @include rem(padding-left, 21);
+  @include rem(padding-right, 21);
+  overflow: hidden;
+}
+
+/* .Breadcrumb-item
+   ========================================================================== */
+.Breadcrumb-item {
+  @include rem(padding-bottom, 9);
+  @include rem(padding-top, 9);
+  @include rem(font-size, 11);
+  @include rem(line-height, 18);
+  display: inline-block;
+  text-decoration: none;
+
+  &:not(:first-child)::before {
+    @include rem(padding-left, 11);
+    @include rem(padding-right, 11);
+    position: relative;
+    top: 3px;
+    display: inline-block;
+    height: 15px;
+    width: 7px;
+    background: $breadcrumbIcon no-repeat center;
+    content: "";
+  }
+
+  &:nth-child(3n-1) {
+    color: $darkBlue;
+  }
+}
+
+.Breadcrumb-item.is-active {
+  color: $black;
+}

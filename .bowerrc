@@ -1,0 +1,4 @@
+{
+	"strict-ssl": false,
+	"directory": "src/main/webapp/base/bower_components"
+}

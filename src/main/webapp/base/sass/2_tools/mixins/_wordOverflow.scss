@@ -1,0 +1,29 @@
+/* ==========================================================================
+   Word Overflow
+   ========================================================================== */
+
+/**
+ * Adiciona reticências ao fim de um texto.
+ *
+ * Incluir esta mixin para adicionar reticencias (...) ao fim de um texto para
+ * que ele não estoure o limite de largura de seu container.
+ *
+ * Funciona em textos de apenas uma linha.
+ *
+ */
+
+@mixin word-overflow($width) {
+ /**
+  * Deve ser inline-block pois se nao a margem de elementos com display:block
+  * quebra o layout
+  */
+  display: block;
+  overflow: hidden;
+  max-width: $width;
+  white-space: nowrap;
+}
+
+@mixin word-overflow-with-ellipsis($width) {
+  @include word-overflow($width);
+  text-overflow: ellipsis;
+}

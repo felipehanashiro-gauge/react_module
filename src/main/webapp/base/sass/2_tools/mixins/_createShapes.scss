@@ -1,0 +1,34 @@
+/* ==========================================================================
+   Cria formas no CSS
+   ========================================================================== */
+
+/**
+ * Cria triangulo com a ponta para cima
+ */
+@mixin createTriangleUp($borderLeft, $borderRight, $borderBottom, $color: $white) {
+  border-bottom: $borderBottom solid $color;
+  border-left: $borderLeft solid transparent;
+  border-right: $borderRight solid transparent;
+  height: 0;
+  width: 0;
+}
+
+/**
+ * Cria triangulo com a ponta para a direita
+ */
+@mixin createTriangleRight($borderLeft, $borderTop, $borderBottom, $color: $white) {
+  border-bottom: $borderBottom solid transparent;
+  border-left: $borderLeft solid $color;
+  border-top: $borderTop solid transparent;
+  height: 0;
+  width: 0;
+}
+
+/**
+ * Cria quadrados
+ */
+@mixin createSquare($value, $color) {
+  @include rem(height, $value);
+  @include rem(width, $value);
+  background-color: $color;
+}

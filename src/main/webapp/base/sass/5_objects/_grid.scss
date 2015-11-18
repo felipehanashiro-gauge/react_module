@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Grid com Flexbox
+   ========================================================================== */
+
+/**
+ * Criado a partir de http://philipwalton.github.io/solved-by-flexbox/demos/grids
+ */
+
+* {
+  box-sizing: $boxSizing;
+
+  &::before,
+  &::after {
+    box-sizing: $boxSizing;
+  }
+}
+
+/* Modulo Grid
+   ========================================================================== */
+.Grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  & > .Grid-cell {
+    display: flex;
+  }
+}
+
+/* Grid com espacamento entre os filhos
+   ========================================================================== */
+.gutters-Grid {
+  @include rem(margin, -$gutterGrid, 0, 0, -$gutterGrid);
+
+  & > .Grid-cell {
+    @include rem(padding, $gutterGrid, 0, 0, $gutterGrid);
+  }
+}
+
+/* Grid em que os filhos se encaixem no espaco disponivel
+   ========================================================================== */
+.fit-Grid {
+  & > .Grid-cell {
+    flex: 1;
+  }
+}
+
+/* Grid em que os filhos tem 100% de largura
+   ========================================================================== */
+.full-Grid {
+  & > .Grid-cell {
+    flex: 0 0 100%;
+  }
+}
+
+/* Grid em que os filhos tem 50% de largura
+   ========================================================================== */
+.half-grid {
+  & > .Grid-cell {
+    flex: 0 0 50%;
+  }
+}
+
+/* Grid em que os filhos tem 1/3 de largura
+   ========================================================================== */
+.oneThird-Grid {
+  & > .Grid-cell {
+    flex: 0 0 33.3333%;
+  }
+}
+
+/* Grid em que os filhos tem 1/4 de largura
+   ========================================================================== */
+.oneFourth-Grid {
+  & > .Grid-cell {
+    flex: 0 0 25%;
+  }
+}
+
+/* Grid em que os filhos estao alinhados no topo
+   ========================================================================== */
+.top-Grid {
+  align-items: flex-start;
+}
+
+/* Grid em que os filhos estao alinhados no fim
+   ========================================================================== */
+.bottom-Grid {
+  align-items: flex-end;
+}
+
+/* Grid em que os filhos estao alinhados no centro
+   ========================================================================== */
+.center-Grid {
+  align-items: center;
+}
+
+/* Celula de um grid; se ajusta ao tamanho disponivel
+   ========================================================================== */
+.Grid-cell {
+  flex: 1;
+}
+
+/* Alinhamento da celula do grid no topo
+   ========================================================================== */
+.Grid-top-cell {
+  align-self: flex-start;
+}
+
+/* Alinhamento da celula do grid no fim
+   ========================================================================== */
+.Grid-bottom-cell {
+  align-self: flex-end;
+}
+
+/* Alinhamento da celula do grid no centro
+   ========================================================================== */
+.Grid-center-cell {
+  align-self: center;
+}
+
+/* Gutter vertical
+   ========================================================================== */
+.top-Gutter {
+  @include rem(margin-top, 21);
+}

@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Componente para input select
+   ========================================================================== */
+%Select-item {
+  position: relative;
+  line-height: 1;
+  transition: $defaultTransition;
+
+  &:hover {
+    background-color: $white;
+    cursor: pointer;
+  }
+}
+
+%Select-highlight {
+  @include rem(font-size, 13);
+  color: $black;
+  font-weight: normal;
+}
+
+.Select {
+  @extend %Select-item;
+  background-color: #FFF;
+}
+
+.Select-wrapper {
+  @include rem(padding, 7, 11, 7, 22);
+
+  &::after {
+    @include rem(top, 18);
+    @include createTriangleRight(4px, 3px, 3px, $black);
+    position: absolute;
+    right: 11px;
+    display: inline-block;
+    content: "";
+  }
+}
+
+.Select-label {
+  @extend %Select-highlight;
+  display: block;
+}
+
+.Select-value {
+  @include rem(font-size, 10);
+  color: $gray;
+  text-transform: capitalize;
+}
+
+.Select-options {
+  @include rem(top, -5);
+  @include rem(max-height, 200);
+  @include rem(padding-bottom, 10);
+  @include rem(padding-top, 10);
+  position: absolute;
+  width: 100%;
+  background-color: #FFF;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
+  overflow-y: auto;
+  z-index: 5;
+}
+
+.Select-option-title {
+  position: relative;
+  line-height: 1;
+  transition: $defaultTransition;
+  @include rem(padding, 13.5, 22);
+}
+
+.Select-option {
+  @extend %Select-item;
+  @include rem(padding, 13.5, 22);
+}

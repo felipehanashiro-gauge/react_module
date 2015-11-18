@@ -1,0 +1,237 @@
+/* ==========================================================================
+   SummaryBox
+   ========================================================================== */
+/**
+ * Caixa do sumario presente na Home
+ */
+
+.summary-box{
+  position: relative;
+
+  display: block;
+  width: 100%;
+  min-height: 180px;
+
+/******************************************************************************
+                  MOCK - COLORS
+******************************************************************************/
+
+  background-color: $darkBlue;
+  .item-name{
+    color: $lightBlue;
+  }
+  .box-identification{
+    background-image: url(../../base/images/home/mapmarker.png);
+  }
+  .footer-item .rate{
+    &::after{
+      color: $darkBlue;
+    }
+  }
+
+  &:first-child{
+    background-color: $green;
+    .item-name{
+      color: $darkBlue;
+    }
+    .box-identification{
+      background-image: url(../../base/images/home/planeagenda.png);
+    }
+    .footer-item .rate{
+      &::after{
+        color: $green;
+      }
+    }
+  }
+
+  &:last-child{
+    background-color: $lightBlue;
+    .item-name{
+      color: $darkBlue;
+    }
+    .box-identification{
+      background-image: url(../../base/images/home/worldwide.png);
+    }
+    .footer-item .rate{
+      &::after{
+        color: $lightBlue;
+      }
+    }
+  }
+/******************************************************************************/
+
+  .data-link{
+    color: $white;
+    text-decoration: none;
+  }
+
+  .box-identification, .summary-data{
+    display: inline-block;
+    color: $white;
+  }
+
+  .header-data, .footer-data{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .box-identification{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    width: 200px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    .box-name{
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+
+      width: 130px;
+
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+
+  .summary-data{
+    float: right;
+
+    width: calc(100% - 200px);
+    padding: 10px;
+  }
+
+  .header-item, .footer-item{
+    position: relative;
+    padding: 10px 15px 25px 15px;
+
+    .rate{
+      font-size: 18px;
+    }
+    .rate-description{
+      font-size: 15px;
+    }
+
+    &::after{
+      content: attr(data-date);
+      position: absolute;
+      top: -2px;
+      right: 5px;
+      font-size: 9px;
+    }
+    .item-name{
+      position: absolute;
+      bottom: 7px;
+
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+
+  .header-data{
+    .header-item{
+      width: 250px;
+      background-color: rgba(255,255,255,0.2);
+      min-height: 60px;
+    }
+
+    .Box-message{
+      position: relative;
+      top: 10px;
+    }
+
+    .rate{
+      display: inline;
+
+      font-weight: bolder;
+      margin-right: 5px;
+    }
+  }
+
+  .footer-data{
+    margin-top: 20px;
+    .footer-item{
+      border: 1px solid rgba(255,255,255,0.5);
+      min-height: 100px;
+      &:first-child{
+        width: 516px;
+      }
+      &:last-child{
+        width: 250px;
+      }
+    }
+
+    .rate{
+       &:first-child::before{
+         content: "\f055";
+       }
+       &::before{
+         content: "\f056";
+
+         position: relative;
+
+         display: inline-block;
+         height: 15px;
+         width: 15px;
+         margin-right: 10px;
+
+         text-align: center;
+         line-height: 0.8;
+         color: $white;
+         font-family: "FontAwesome";
+       }
+       &::after{
+         content: attr(data-rate);
+
+         vertical-align: top;
+
+         padding: 1px 3px;
+         margin-left: 15px;
+
+         font-size: 10px;
+         font-weight: bolder;
+         background-color: $white;
+         color: $darkBlue;
+       }
+     }
+
+    .rate-description{
+      margin-left: 25px;
+      margin-bottom: 15px;
+    }
+
+  }
+
+  &:first-child{
+    .rate{
+      display: block;
+
+      margin-bottom: 5px;
+
+      font-size: 30px;
+    }
+    .rate-description{
+      font-size: 18px;
+    }
+
+    .footer-data{
+      .rate::before{
+        height: 25px;
+        width: 25px;
+        line-height: 0.6;
+      }
+      .rate::after{
+        vertical-align: super;
+      }
+      .rate-description{
+        margin-left: 35px;
+      }
+    }
+  }
+
+
+}

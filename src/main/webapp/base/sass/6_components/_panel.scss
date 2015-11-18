@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Painel
+   ========================================================================== */
+/**
+ * Adiciona bordas e fundo a um componente
+ */
+
+/* Estilo
+   ========================================================================== */
+%bottom-Panel,
+.bottom-Panel {
+  border-bottom: $borderStyle;
+}
+
+%top-Panel,
+.top-Panel {
+  border-top: $borderStyle;
+}
+
+%left-Panel,
+.left-Panel {
+  border-left: $borderStyle;
+}
+
+%right-Panel,
+.right-Panel {
+  border-right: $borderStyle;
+}
+
+/**
+ * Adiciona bordas em top e bottom
+ */
+%x-Panel,
+.x-Panel {
+  @extend %bottom-Panel;
+  @extend %top-Panel;
+}
+
+/**
+ * Adiciona bordas em left e right
+ */
+%y-Panel,
+.y-Panel {
+  @extend %left-Panel;
+  @extend %right-Panel;
+}
+
+%Panel,
+.Panel {
+  @extend %x-Panel;
+  @extend %y-Panel;
+}
+
+%Panel-area,
+.Panel-area {
+  @extend %bottom-Panel;
+  @extend %clearfix;
+  position: relative;
+  background-color: $white;
+}

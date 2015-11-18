@@ -1,0 +1,401 @@
+/* ==========================================================================
+   TableRank
+   ========================================================================== */
+
+// Colors
+$fullBgColor: #f1f1f1;
+$theadBorderColor: #ffffff;
+$theadBgColor: #e3b838;
+$theadSecBgColor: #e7c96f;
+$theadColor: #ffffff;
+$defaultBorderColor: #bfbfbf;
+$defaultBgColor: #ffffff;
+$defaultColor: #7d7d7d;
+$hoverBgColor: #faf0d5;
+$hoverColor: #dcb953;
+$middleBgColor: #f8f8f8;
+$rightBgColor: #f2f2f2;
+$nohoverBgColor: #ededed;
+$nohoverMiddleBgColor: #e7e7e7;
+$nohoverRightBgColor: #e2e2e2;
+
+// Widths
+$fc: 30px;
+$descriptionWidth: 236px;
+$sysMod: 40px;
+$rkWidth: 25px;
+$qtyWidth: 55px;
+$qtyLargeWidth: 70px;
+$rateWidth: 58px;
+$contrWidth: 73px;
+
+.fullBackground {
+    width: 100%;
+    background-color: $fullBgColor;
+}
+
+.Table-rank {
+    thead {
+        color: $theadColor;
+        select {
+            float: right;
+            border: 0px;
+            background-color: $theadBgColor;
+        }
+        input {
+            color: $defaultColor;
+        }
+        tr {
+            height: 40px;
+            &:nth-child(1) {
+                background-color: $theadBgColor;
+            }
+            &:nth-child(2) {
+                background-color: $theadSecBgColor;
+                input {
+                    margin: 2%;
+                    width: 95%;
+                    height: 30px;
+                }
+            }
+        }
+        th {
+            border: 1px solid $theadBorderColor;
+            font-weight: normal;
+        }
+        th:nth-child(1) {
+            max-width: $fc;
+            min-width: $fc;
+            width: $fc;
+        }
+        th:nth-child(2) {
+            max-width: $descriptionWidth;
+            min-width: $descriptionWidth;
+            width: $descriptionWidth;
+        }
+        th:nth-child(3) {
+            max-width: $sysMod;
+            min-width: $sysMod;
+            width: $sysMod;
+        }
+        th:nth-child(4) {
+            max-width: $rkWidth;
+            min-width: $rkWidth;
+            width: $rkWidth;
+        }
+        th:nth-child(5) {
+            max-width: $qtyWidth;
+            min-width: $qtyWidth;
+            width: $qtyWidth;
+        }
+        th:nth-child(6) {
+            max-width: $rateWidth;
+            min-width: $rateWidth;
+            width: $rateWidth;
+        }
+        th:nth-child(7) {
+            max-width: $contrWidth;
+            min-width: $contrWidth;
+            width: $contrWidth;
+        }
+        th:nth-child(8) {
+            max-width: $rkWidth;
+            min-width: $rkWidth;
+            width: $rkWidth;
+        }
+        th:nth-child(9) {
+            max-width: $qtyWidth;
+            min-width: $qtyWidth;
+            width: $qtyWidth;
+        }
+        th:nth-child(10) {
+            max-width: $rateWidth;
+            min-width: $rateWidth;
+            width: $rateWidth;
+        }
+        th:nth-child(11) {
+            max-width: $contrWidth;
+            min-width: $contrWidth;
+            width: $contrWidth;
+        }
+        th:nth-child(12) {
+            max-width: $rkWidth;
+            min-width: $rkWidth;
+            width: $rkWidth;
+        }
+        th:nth-child(13) {
+            max-width: $qtyLargeWidth;
+            min-width: $qtyLargeWidth;
+            width: $qtyLargeWidth;
+        }
+        th:nth-child(14) {
+            max-width: $rateWidth;
+            min-width: $rateWidth;
+            width: $rateWidth;
+        }
+        th:nth-child(15) {
+            max-width: $contrWidth;
+            min-width: $contrWidth;
+            width: $contrWidth;
+        }
+    }
+    tbody {
+        color: $defaultColor;
+        tr {
+            height: 30px;
+            border-top: 1px solid $defaultBorderColor;
+            border-right: 1px solid $defaultBorderColor;
+            background-color: $defaultBgColor;
+            text-align: center;
+            &:hover, &.is-active {
+                border: 1px solid $hoverColor !important;
+                background-color: $hoverBgColor;
+                color: $hoverColor;
+                cursor: auto;
+                td {
+                    border-left: 1px solid $hoverColor !important;
+                    background-color: $hoverBgColor;
+                    color: $hoverColor;
+                    &:nth-child(3) {
+                        cursor: pointer;
+                    }
+                }
+            }
+            &:last-child {
+                border: 1px solid $defaultBorderColor;
+            }
+            &.Table-rank-fc {
+                border-top: 0px !important;
+                border-right: 1px solid $theadBorderColor;
+                background-color: $theadSecBgColor;
+                color: $theadColor;
+                cursor: auto;
+                td {
+                    border-color: $theadBorderColor;
+                    background-color: $theadSecBgColor;
+                    color: $theadColor;
+                }
+                &:hover, &.is-active {
+                    border: 1px solid $theadBorderColor !important;
+                    border-top: 0px !important;
+                    border-bottom-color: $defaultBorderColor !important;
+                    td {
+                        border-left: 1px solid $theadBorderColor !important;
+                        background-color: $theadSecBgColor;
+                        color: $theadColor;
+                        &:nth-child(1) {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+        td {
+            border-left: 1px solid $defaultBorderColor;
+        }
+        td:nth-child(1) {
+            max-width: $fc;
+            min-width: $fc;
+            width: $fc;
+        }
+        td:nth-child(2) {
+            max-width: $descriptionWidth;
+            min-width: $descriptionWidth;
+            width: $descriptionWidth;
+            padding-left: 1%;
+            text-align: left;
+            color: $blue;
+        }
+        td:nth-child(3) {
+            max-width: $sysMod;
+            min-width: $sysMod;
+            width: $sysMod;
+            color: $blue;
+        }
+        td:nth-child(4) {
+            max-width: $rkWidth;
+            min-width: $rkWidth;
+            width: $rkWidth;
+        }
+        td:nth-child(5) {
+            max-width: $qtyWidth;
+            min-width: $qtyWidth;
+            width: $qtyWidth;
+        }
+        td:nth-child(6) {
+            max-width: $rateWidth;
+            min-width: $rateWidth;
+            width: $rateWidth;
+        }
+        td:nth-child(7) {
+            max-width: $contrWidth;
+            min-width: $contrWidth;
+            width: $contrWidth;
+        }
+        td:nth-child(8) {
+            max-width: $rkWidth;
+            min-width: $rkWidth;
+            width: $rkWidth;
+            background-color: $middleBgColor;
+        }
+        td:nth-child(9) {
+            max-width: $qtyWidth;
+            min-width: $qtyWidth;
+            width: $qtyWidth;
+            background-color: $middleBgColor;
+        }
+        td:nth-child(10) {
+            max-width: $rateWidth;
+            min-width: $rateWidth;
+            width: $rateWidth;
+            background-color: $middleBgColor;
+        }
+        td:nth-child(11) {
+            max-width: $contrWidth;
+            min-width: $contrWidth;
+            width: $contrWidth;
+            background-color: $middleBgColor;
+        }
+        td:nth-child(12) {
+            max-width: $rkWidth;
+            min-width: $rkWidth;
+            width: $rkWidth;
+            background-color: $rightBgColor;
+        }
+        td:nth-child(13) {
+            max-width: $qtyLargeWidth;
+            min-width: $qtyLargeWidth;
+            width: $qtyLargeWidth;
+            background-color: $rightBgColor;
+        }
+        td:nth-child(14) {
+            max-width: $rateWidth;
+            min-width: $rateWidth;
+            width: $rateWidth;
+            background-color: $rightBgColor;
+        }
+        td:nth-child(15) {
+            max-width: $contrWidth;
+            min-width: $contrWidth;
+            width: $contrWidth;
+            background-color: $rightBgColor;
+        }
+    }
+    &.nohover tbody {
+        tr {
+            background-color: $nohoverBgColor;
+            cursor: auto;
+            &:hover {
+                border-color: $defaultBorderColor !important;
+                background-color: $nohoverBgColor;
+                color: $defaultColor;
+                td {
+                    border-left: 1px solid $defaultBorderColor !important;
+                    background-color: $nohoverBgColor;
+                    color: $defaultColor;
+                    &:nth-child(3) {
+                        cursor: auto;
+                    }
+                    &:nth-child(8),
+                    &:nth-child(9),
+                    &:nth-child(10),
+                    &:nth-child(11) {
+                        background-color: $nohoverMiddleBgColor;
+                    }
+                    &:nth-child(12),
+                    &:nth-child(13),
+                    &:nth-child(14),
+                    &:nth-child(15) {
+                        background-color: $nohoverRightBgColor;
+                    }
+                }
+            }
+            &:last-child {
+                border: 1px solid $defaultBorderColor;
+                background-color: $defaultBgColor;
+                &:hover {
+                    background-color: $defaultBgColor;
+                    td {
+                        background-color: $defaultBgColor;
+                    }
+                }
+                td {
+                    background-color: $defaultBgColor;
+                }
+            }
+        }
+        td:nth-child(2),
+        td:nth-child(3) {
+            color: $defaultColor;
+        }
+        td:nth-child(8),
+        td:nth-child(9),
+        td:nth-child(10),
+        td:nth-child(11) {
+            background-color: $nohoverMiddleBgColor;
+        }
+        td:nth-child(12),
+        td:nth-child(13),
+        td:nth-child(14),
+        td:nth-child(15) {
+            background-color: $nohoverRightBgColor;
+        }
+    }
+    .total {
+        background-color: $rightBgColor;
+        &:hover {
+            border-color: $defaultBorderColor;
+            background-color: $rightBgColor;
+            color: $defaultColor;
+            cursor: auto;
+        }
+    }
+}
+
+.Table-rank-head {
+    width: 98.4%;
+}
+
+.Table-rank-background {
+    padding-top: 10px;
+    padding-left: 10px;
+    background-color: $fullBgColor;
+    p {
+        color: $defaultColor;
+    }
+}
+
+.Table-rank-tbody-div {
+    max-height: 308px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.Table-rank-total-div {
+    margin-top: 2px;
+}
+
+.Rank-panel {
+    display: none;
+}
+
+.compact-Table {
+    width: 269px;
+    tbody {
+        tr:hover {
+            cursor: pointer !important;
+            td {
+                cursor: pointer !important;
+            }
+            &.Table-rank-fc:hover {
+                cursor: auto !important;
+                td {
+                    cursor: auto !important;
+                    &:nth-child(1) {
+                        cursor: pointer !important;
+                    }
+                }
+            }
+        }
+    }
+}

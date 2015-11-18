@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Criador de botoes do Menu
+   ========================================================================== */
+/**
+ * Cria botao para o menu principal do esight a partir de um icone
+ */
+@mixin createMenuButton($url, $urlHover: $url) {
+  @include rem(height, $columnGrid);
+  width: 100%;
+  background-image: $url;
+  background-repeat: no-repeat;
+  background-position-x: 9px;
+
+  &:hover,
+  &.is-active {
+    background-image: $urlHover;
+    background-color: $darkerGray;
+    color: $white;
+  }
+
+  &.is-active {
+    box-shadow: -3px 0 0 $blue;
+    background-color: $blue;
+    color: $white;
+  }
+  &.Dropdown-up-trigger.has-child::after, &.Dropdown-up-trigger.has-child:hover::after,  &.Dropdown-up-trigger.has-child.is-active::after {
+    border-bottom-color: $white;
+  }
+  &.Dropdown-up-trigger:not(.has-child)::after{
+    border-bottom-color: transparent;
+  }
+}

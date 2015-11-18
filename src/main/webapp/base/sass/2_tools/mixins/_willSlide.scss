@@ -1,0 +1,12 @@
+/* ==========================================================================
+   Will slide
+   ========================================================================== */
+/**
+ * Adiciona propriedades para que o slide de um item da tela
+ * seja performatico e suave
+ */
+@mixin willSlide() {
+  backface-visibility: hidden;
+  perspective: 1000;
+  transition: transform .2s ease-out;
+}
